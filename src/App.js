@@ -85,6 +85,9 @@ const App = () => {
           className="btn"
           onClick={() => {
             const value = findRef.current.input.value;
+            if(text === ''){
+              message.error('暂未输入内容，请先输入文本内容！')
+            }
             if (text.includes(value)) {
               message.success("查找到文本！");
             } else {
