@@ -87,9 +87,11 @@ const App = () => {
             const value = findRef.current.input.value;
             if(text === ''){
               message.error('暂未输入内容，请先输入文本内容！')
+              return
             }
             if (text.includes(value)) {
               message.success("查找到文本！");
+              return
             } else {
               message.error("未找到指定文本");
             }
