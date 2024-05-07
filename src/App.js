@@ -1,5 +1,4 @@
 import { useRef, useState } from "react";
-import logo from "./logo.svg";
 import { Button, Input, Popover, message, ColorPicker } from "antd";
 import "./App.css";
 
@@ -65,6 +64,7 @@ const App = () => {
           </Button>
         </Popover>
         <ColorPicker
+        defaultValue={'black'}
           className="btn"
           value={color}
           onChange={(value) => {
