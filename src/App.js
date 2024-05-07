@@ -22,9 +22,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Input.TextArea className='text-input' placeholder='请输入内容' value={text} style={{fontSize: `${textSize}px`, color: `${color}`}} onChange={(e) => {
-        setText(e.target.value)
-      }}></Input.TextArea>
+      <div>
       <Popover title="修改字体大小" content={() => {
         return [
         <Button key={'1'} onClick={() => handleChangeSize(12)}>12</Button>,
@@ -36,7 +34,6 @@ const App = () => {
       }}>
         <Button type='default' className='btn'>变更大小</Button>
       </Popover>
-      <br></br>
       <Popover title='修改字体颜色' content={() =>{
         return [
           <Button key={'red'} onClick={() => {handleColorChange('purple')}}>紫色</Button>,
@@ -48,7 +45,7 @@ const App = () => {
       }}>
         <Button type='default' className='btn'>变更颜色</Button>
       </Popover>
-      <br></br>
+      </div>
       <div className='btn'>
         <Input placeholder='请输入查找内容' allowClear ref={findRef} style={{width: '200px'}}></Input>
         <Button type='default' className='btn' onClick={() => {
@@ -60,7 +57,6 @@ const App = () => {
           }
         }}>查找</Button>
       </div>
-      <br></br>
       <div className='btn'>
         <Input allowClear placeholder='请输入替换文本' ref={replaceRef} style={{width: '200px'}}></Input>
         <Button type='default' className='btn' onClick={() => {
@@ -76,6 +72,9 @@ const App = () => {
           message.success('已全部完成替换');
         }}>替换</Button>
       </div>
+      <Input.TextArea size='large' className='text-input' placeholder='请输入内容' value={text} style={{fontSize: `${textSize}px`, color: `${color}`, height: "400px", width: "1000px"}} onChange={(e) => {
+        setText(e.target.value)
+      }}></Input.TextArea>
       
     </div>
   );
